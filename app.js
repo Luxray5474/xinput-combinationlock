@@ -1,4 +1,5 @@
 const xinput = require("./xinputjs-master");
+const logupd = require("log-update");
 
 [0]
 .filter(n => xinput.IsConnected(n))
@@ -22,7 +23,7 @@ const xinput = require("./xinputjs-master");
       x = data.x * 100;
       y = data.y * 100;
       angle = Math.atan2(-x, -y) * 180 / Math.PI + 180;
-      console.log(Math.floor(angle) + '°');
+      logupd(Math.floor(angle) + '°');
     }
 	});
 });
