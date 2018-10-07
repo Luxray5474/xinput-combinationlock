@@ -17,7 +17,12 @@ const xinput = require("./xinputjs-master");
 		console.log(isConnected ? "Controller Connected" : "Controller Disconnected");
 	});
   
-  gamepad.addListener("analog-input", (input, data) => {
-		console.log(`${gamepadID}::${input}:`, data);
+  gamepad.addListener("analog-input", (input, data) => { //what's beautiful about his wrapper is that it outputs both axes simultaneously
+    if(input == "rightstick") {
+      x = data.x * 100;
+      y = data.y * 100;
+      angle = Math.atan2(-x, -y) * 180 / Math.PI + 180;
+      console.log(Math.floor(angle) + '°');
+    }
 	});
 });
