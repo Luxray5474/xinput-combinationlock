@@ -10,7 +10,7 @@
 				"<!(node -e \"require('nan')\")"
 			],
 			"libraries": [
-				'-lXInput9_1_0'
+				'-lXInput'
 			]
 		}
 	]
